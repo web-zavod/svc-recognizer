@@ -1,8 +1,6 @@
 package queries
 
 import (
-	"encoding/json"
-	"fmt"
 	"io"
 
 	"github.com/elastic/go-elasticsearch/v7/esutil"
@@ -48,7 +46,5 @@ func SearchCategories(text string) io.Reader {
 		},
 	}
 
-	b, _ := json.Marshal(res)
-	fmt.Println(string(b))
 	return esutil.NewJSONReader(res)
 }
